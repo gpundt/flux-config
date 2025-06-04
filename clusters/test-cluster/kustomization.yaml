@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: my-kustomization
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: /home/user/git/flux-config/clusters/test-cluster
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: fluxrepo
+  targetNamespace: default
+resources:
+  - nginx-deployment.yaml
+  - nginx-service.yaml
