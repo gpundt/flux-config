@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - nginx-deployment.yaml
   - nginx-service.yaml
+configMapGenerator:
+  - name: nginx-html
+    files:
+      - index.html=html/index.html
