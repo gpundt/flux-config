@@ -3,7 +3,7 @@ kinf: Ingress
 metadata:
   name: nginx-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /name
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: master
